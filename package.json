@@ -1,7 +1,9 @@
 {
   "main": "src/server.ts",
   "scripts": {
-    "dev": "tsx --watch src/server.ts"
+    "dev": "tsx --watch src/app.ts",
+    "build": "tsup src/app.ts src/server.ts --config tsup.config.ts",
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "@prisma/client": "^6.7.0",
@@ -10,6 +12,7 @@
     "dotenv": "^16.5.0",
     "express": "^4.21.2",
     "express-async-errors": "^3.1.1",
+    "pg": "^8.13.0",
     "zod": "^3.24.3"
   },
   "devDependencies": {
@@ -21,6 +24,7 @@
     "express-list-endpoints": "^7.1.1",
     "jsonwebtoken": "^9.0.2",
     "prisma": "^6.7.0",
+    "tsup": "^8.4.0",
     "tsx": "^4.19.4",
     "typescript": "^5.5.4"
   }
