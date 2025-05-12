@@ -10,6 +10,8 @@ services:
       POSTGRES_DB: api-pass-mais
     volumes:
       - pg_data:/bitnami/postgresql
+    networks:
+      - passmais-network
 
   api:
     build:
@@ -27,6 +29,12 @@ services:
       DB_PASSWORD: postgres
       DB_NAME: api-pass-mais
       PORT: 3333
+    networks:
+      - passmais-network
 
 volumes:
   pg_data:
+
+networks:
+  passmais-network:
+    external: true
