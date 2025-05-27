@@ -30,7 +30,7 @@ services:
       DB_NAME: api-pass-mais
       PORT: 3333
     networks:
-      - passmais-networkk
+      - passmais-network
 
 volumes:
   pg_data:
